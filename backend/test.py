@@ -38,6 +38,11 @@ def hello_world():
 @allow_cross_domain
 def api_test():
     return jsonify({'tasks': tasks})
+
+@app.route('/api/test/<params>')
+@allow_cross_domain
+def params_test(params):
+    return jsonify({'params': params})
  
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5050)

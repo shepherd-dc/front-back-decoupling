@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { SERVER_URI } from '../../global.js'
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,10 +16,13 @@ export default {
     }
   },
   created() {
-   this.$http.get('http://172.16.5.54:5050/api/test').then(data=>{
-     console.log(data.data)
+   this.$http.get(SERVER_URI+'/api/test').then(data=>{
+    //  console.log(data.data)
      this.tasks = data.data.tasks
-   }) 
+   })
+   this.$http.get(SERVER_URI+`/api/test/${this.msg}`).then(data=>{
+     console.log(data)
+    })
   }
 }
 </script>
