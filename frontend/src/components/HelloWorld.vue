@@ -15,7 +15,7 @@ export default {
     }
   },
   created() {
-   this.$http.get('/api/test').then(data=>{
+   this.$http.get('http://172.16.5.54:5050/api/test').then(data=>{
      console.log(data.data)
      this.tasks = data.data.tasks
    }) 

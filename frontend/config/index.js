@@ -16,7 +16,7 @@ module.exports = {
         target: SERVER_URL,
         changeOrigin: true, // 允许跨域
         pathRewrite: {
-          '/api': SERVER_URL + '/api'
+          '^/api': SERVER_URL + '/api'
         },
         cookieDomainRequest: {
           '*': ''
