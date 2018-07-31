@@ -6,15 +6,17 @@
 </template>
 
 <script>
+import {get} from '../utils/http'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      data: []
     }
   },
   created() {
-   this.$http.get('http://172.16.5.54:5050/api/test').then(data=>{
+   get('http://172.16.5.54:5050/api/test').then(data=>{
      console.log(data)
    }) 
   }
