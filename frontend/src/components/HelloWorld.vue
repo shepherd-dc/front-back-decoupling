@@ -14,7 +14,7 @@ export default {
     }
   },
   created() {
-   this.$http.get('http://www.kanyanbao.com/newsadapter2/autonews_speak.json?id=917827').then(data=>{
+   this.$http.get('http://172.16.5.54:5050/api/test').then(data=>{
      console.log(data)
    }) 
   }
