@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-// const SERVER_URL = 'http://172.16.5.54:5050'
+const SERVER_URL = 'http://172.16.5.54:5050'
 
 module.exports = {
   dev: {
@@ -12,16 +12,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/api': { // 此处并非一定和url一致。
-      //   target: SERVER_URL,
-      //   changeOrigin: true, // 允许跨域
-      //   pathRewrite: {
-      //     '^/api': SERVER_URL + '/api'
-      //   },
-      //   cookieDomainRequest: {
-      //     '*': ''
-      //   }
-      // }
+      '/api': { // 此处并非一定和url一致。
+        target: SERVER_URL,
+        changeOrigin: true, // 允许跨域
+        pathRewrite: {
+          '^/api': SERVER_URL + '/api'
+        },
+        cookieDomainRequest: {
+          '*': ''
+        }
+      }
     },
 
     // Various Dev Server settings
